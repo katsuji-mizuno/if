@@ -1,0 +1,228 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+#flow{
+	#pageHead  {
+		background-image: url(../images/flow/bg_flow_head.jpg);
+	}
+}
+
+/*----------------------------------------------------
+main
+----------------------------------------------------*/
+
+#main {
+	}
+
+
+
+
+/*----------------------------------------------------
+flow_block
+----------------------------------------------------*/
+
+.flow_block {
+	max-width: 1060px;
+	margin: 0 auto 30px;
+	@include mediaPC{
+		border-left: 20px solid;
+		margin: 0 auto 10px;
+		min-height: 250px;
+		&:nth-child(1){border-color: #F2F2F2;}
+		&:nth-child(2){border-color: #DCE2E1;}
+		&:nth-child(3){border-color: #C9D1D0;}
+		&:nth-child(4){border-color: #B8C9C7;}
+		&:nth-child(5){border-color: #95B5B2;}
+		&:nth-child(6){border-color: #749B98;}
+
+		}
+	@include mediaSP{
+		.flow_block_tit_wrap{
+			position: relative;
+			&::after{
+				content: "";
+				margin: 0 calc(50% - 50vw);
+				width: 120%;
+				position: absolute;
+				z-index: -1;
+				left: -10px;
+				top: 37px;
+			}
+		}
+		&:nth-child(1){.flow_block_tit_wrap{&::after{border-bottom: solid 20px #F2F2F2;}}}
+		&:nth-child(2){.flow_block_tit_wrap{&::after{border-bottom: solid 20px #F2F2F2;}}}
+		&:nth-child(3){.flow_block_tit_wrap{&::after{border-bottom: solid 44px #F2F2F2;}}}
+		&:nth-child(4){.flow_block_tit_wrap{&::after{border-bottom: solid 20px #F2F2F2;}}}
+		&:nth-child(5){.flow_block_tit_wrap{&::after{border-bottom: solid 20px #F2F2F2;}}}
+		&:nth-child(6){.flow_block_tit_wrap{&::after{border-bottom: solid 44px #F2F2F2;}}}
+	}
+
+}
+
+
+
+.flow_block_text_wrap {
+	@include mediaPC{
+	display:flex;
+    justify-content: space-between;
+	}
+	@include mediaSP{
+		padding: 0 0 20px;
+	}
+}
+
+
+.flow_block_inner {
+	@include mediaPC{
+		display: flex;
+		justify-content: space-between;
+		&.reverse{
+			flex-flow: row-reverse;
+		}
+	}
+}
+
+.flow_block_text {
+    margin: 0 0 0 3vw;
+	@include mediaSP{
+		padding: 0 0 30px;
+	}
+}
+
+.flow_block_tit_wrap{
+	display: flex;
+	align-items: flex-start;
+	@include mediaSP{
+		margin: 0px 0 20px;
+	}
+}
+
+.flow_block_tit {
+	margin: 28px 0 0 10px;
+	font-size: 17px;
+	font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+
+	br{
+		@include mediaPC{
+			display: none;
+		}
+	}
+	@include mediaPC{
+		margin: 0 0 0 60px;
+	}
+}
+
+
+.flow_block_txt {
+	@include mediaPC{
+		margin: 30px 0 0 90px;
+		padding: 0 0 40px;
+	}
+	line-height: 2;
+  }
+
+
+  .flow_block_img {
+    box-shadow: 2px 2px 5px #ccc;
+
+	@include mediaPC{
+		width: 372px;
+		height: 204px;
+	}
+	@include mediaSP{
+    width: 95%;
+    margin: 0 0 0 10px;
+	}
+}
+
+.flow_block_num {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 24px;
+  position: relative;
+  &::after {
+    content: "";
+    border-top: 1px solid #000;
+    width: 60px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(-60deg);
+    position: absolute;
+    top: 30px;
+	@include mediaSP{
+		top: 28px;
+		left: -4px;
+		transform: rotate(-40deg);
+		width: 65px;
+	}
+  }
+}
+
+
+
+
+
+.btn_flow {
+  margin: 60px auto;
+  text-align: right;
+  a {
+    background: #546C6C;
+    color: #fff;
+    font-size: 13px;
+    padding: 20px 100px;
+    @include trans;
+    &:hover{
+      background: #505050;
+    }
+  }
+}
+
+
+
+/*===============================
+「予約」、「ショールーム」へのリンク
+================================*/
+
+.inqury_link {
+	text-align: left;
+}
+
+.inqury_link_text {
+    text-align: left;
+}
+
+.inqury_link_btn {
+
+	@include mediaPC{
+		display: flex;
+		margin: 20px 0 60px;
+	}
+}
+
+
+
+.inqury_link_btn_reservation,.inqury_link_btn_showroom{
+	a{
+		color: #fff;
+		padding: 15px 60px;
+		@include trans;
+		&:hover{
+			background: #505050;
+		}
+	}
+}
+
+.inqury_link_btn_reservation{
+	margin: 0 0 0 10px;
+		a{
+		background: #2B2B2B;
+	}
+	@include mediaSP{
+		margin: 20px 10px 30px 0;
+	}
+}
+
+.inqury_link_btn_showroom{
+	a{
+		background: #546C6C;
+	}
+}

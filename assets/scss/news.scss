@@ -1,0 +1,143 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+#news{
+	#pageHead  {
+		background-image: url(../images/news/bg_news_head.jpg);
+	}
+}
+
+/*=================
+  パンくず
+=================*/
+
+.brunch {
+	@include mediaMIDmin {
+		top: 160px;
+		left: -40px;
+	  }
+  }
+/*===============================
+  NEWS　一覧ページ
+================================*/
+.news_wrap {
+    max-width: 1060px;
+    margin: 0 auto;
+	text-align: left;
+}
+
+.news_list_tit {
+    font-size: 16px;
+}
+
+.news_list {
+	border-top: 1px solid #D1D1D1;
+	padding: 30px 0;
+	&:last-child{
+		border-bottom: 1px solid #D1D1D1;
+	}
+
+}
+
+.news_list_time {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	color: #969696;
+	line-height: 3;
+	letter-spacing: 2px;
+}
+
+a.news_list_tit_link{
+	position: relative;
+	left: 0px;
+	@include trans;
+	&:hover{
+		left: 10px;
+	}
+}
+
+
+/*===============================
+  NEWS　記事ページ
+================================*/
+.news_time {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 16px;
+	color: #969696;
+	line-height: 3;
+	letter-spacing: 2px;
+}
+
+.news_tit {
+    font-size: 22px;
+}
+
+.news_content {
+	@include mediaSP{
+		margin: 10px 0 60px;
+	}
+	p{
+		line-height: 1.6;
+		margin: 10px 0 0;
+		img {
+			width: unset;
+		}
+	}
+}
+
+/*===============================
+  NEWS　ページャー
+================================*/
+
+.news_list_pager {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 18px;
+	color:#9B8A75;
+	margin: 70px 0;
+	text-align: center;
+
+	span ,a{
+		margin: 0 20px 0 0;
+		padding: 0 0 5px;
+		&:last-child{
+			margin: 0;
+		}
+	}
+	span{
+		border-bottom:1px solid #9B8A75;
+	}
+	a{
+		color: #2B2B2B;
+		border-bottom:none;
+		@include trans;
+		&:hover{
+			color: #9B8A75;
+		}
+	}
+	.dots {
+		border-bottom:none;
+	}
+
+	.prev,.next{
+		position: relative;
+		&::after{
+			content: "";
+			width: 6px;
+			height: 6px;
+			border-top: 1px solid #2B2B2B;
+			border-right: 1px solid #2B2B2B;
+			position: absolute;
+			top: 9px;
+			left: -4px;
+			@include trans;
+		}
+		&:hover{
+			&::after{
+				border-top: 1px solid #9B8A75;
+				border-right: 1px solid #9B8A75;
+			}
+		}
+	}
+	.prev{	&::after{transform: rotate(-135deg);}}
+	.next{	&::after{transform: rotate(45deg);}}
+}

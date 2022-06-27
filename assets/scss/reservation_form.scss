@@ -1,0 +1,605 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+body {
+	font-size:13px;
+  }
+
+#reservation{
+	#pageHead  {
+		background-image: url(../images/reservation/bg_reservation_head.jpg);
+	}
+}
+
+.reservation_wrap {
+	max-width: 1060px;
+	margin: 0 auto;
+	padding: 0 0 180px;
+}
+
+
+#booking-reservation-fieldset {
+
+	td{
+			&::before{
+				content: "ご来店のご予約内容";
+				position: absolute;
+				width: 150px;
+				left: 50%;
+				top: -10px;
+				background: #fff;
+				font-size: 13px;
+				margin-left: -70px;
+				text-align: center;
+				@include mediaSMLmin{
+					left: 90px;
+					top: 23px;
+				}
+			}
+		}
+
+}
+
+
+/*===============================
+カレンダーのデザイン変更
+================================*/
+
+.reservation_wrap{
+	th,td{
+		border-bottom: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		&:last-child{
+			border-right:none;
+		}
+
+	}
+
+	td{
+		vertical-align: top;
+
+	}
+
+	.list-monthly-calendar table, .mix-calendar table, .timetable-calendar table, .multiple-calendar table, .monthly-calendar table {
+		width: 100%;
+		border-spacing: 0px;
+		border: 1px solid #ccc;
+		font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体";
+
+	}
+
+	.calendar-time-disable {
+		display: none;
+	}
+	.day-box.no-day {
+		background-color: #fff;
+	}
+}
+
+.mix-calendar th, .timetable-calendar th, .multiple-calendar th, .monthly-calendar th {
+    font-weight: bold;
+	padding: 15px 0;
+}
+
+
+//カレンダーの月表示
+
+.calendar-caption{
+	position: relative;
+}
+
+.calendar-caption {
+    text-align: center;
+	margin: 10px 0 20px;
+}
+
+.monthly-prev-next{
+	color: #fff;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+
+	span,a{
+		padding: 5px 30px;
+		color: #fff;
+		font-size: 16px;
+	}
+}
+
+.monthly-next,.monthly-prev{
+	span{
+		background: #7B7676;
+	}
+	a{
+		background: #2F2F2E;
+		@include trans;
+		&:hover{
+			background: #505050;
+		}
+	}
+}
+
+.calendar-time-mark{
+	position: relative;
+	background: #D5D5D5;
+    margin: 20px 15px 0;
+	height: 30px;
+
+	span{
+		position: absolute;
+		z-index: 1;
+		top: 3px;
+		right: 30px;
+		pointer-events: none;
+	}
+	a{
+		background: #2F2F2E;
+		height: 30px;
+		text-align: center;
+		display: block;
+		position: relative;
+		@include trans;
+		&:hover{
+			background: #505050;
+		}
+
+		&::before{
+			content: "◎";
+			position: absolute;
+			top: 3px;
+			right: 80px;
+			color: #fff;
+
+		}
+	}
+
+}
+.calendar-time-mark .time-string {
+	font-size: 16px;
+}
+
+.calendar-timelink{
+	font-size: 16px;
+}
+
+.time-string{
+	position: relative;
+	color: #2F2F2E;
+
+	&::before{
+		content: "×";
+		position: absolute;
+		top: 0px;
+		right: 51px;
+	}
+}
+.link{
+	.time-string{
+		color: #fff;
+		&::before{
+			display: none;
+		}
+	}
+}
+
+
+
+
+/*===============================
+カレンダーのユーザー情報入力画面の編集
+================================*/
+
+#booking-reservation-fieldset{
+	border: 1px solid#ACACAC;
+	box-sizing: border-box;
+	margin: 0 0 60px;
+	@include mediaSP{
+		margin: 0 0 30px;
+	}
+	legend,th,.booking-form-people-number-row{
+		display: none;
+	}
+	tr{
+
+		&:first-child{
+			td{
+				padding: 20px 0;
+				position: relative;
+				font-size: 17px;
+				text-align: center;
+
+				@include mediaSMLmax{
+					padding: 20px 0;
+				}
+
+				br{
+					margin: 15px;
+					content: "　";
+					position: relative;
+					@include mediaSMLmax{
+						display: block;
+					}
+
+				}
+			}
+		}
+	}
+}
+
+.content-form th, .content-form td {
+	border: none;
+}
+
+
+
+#booking_client-fieldset,#booking-message-fieldset{
+	table,th {
+		text-align: left;
+	}
+	th {
+		width: 30%;
+	}
+	input{
+		border: none;
+		background: #EBEBEB;
+		padding: 10px;
+		width: 100%;
+		box-sizing: border-box;
+		margin: 0 0 30px;
+	}
+	textarea{
+		box-sizing: border-box;
+		border: none;
+		background: #EBEBEB;
+		padding: 10px;
+		width: 100%;
+	}
+	@include mediaSP{
+		th,td {
+			width: 100%;
+			display: block;
+		}
+	}
+}
+
+
+
+.content-form fieldset{
+	border: none;
+	width: 100%;
+}
+
+
+.content-form .booking-seimei {
+    display: none;
+}
+#booking-mei,#booking-mei_kana,#client-address2{
+	display: none;
+}
+
+#booking-message-fieldset legend{
+	display: none;
+}
+
+
+/*===============================
+「必須」、「任意」のアイコン追加
+================================*/
+.required_add{
+	&::after{
+		content: "必須";
+		background: #C9D1D0;
+		font-size: 12px;
+		padding: 1px 10px;
+		margin: 0 0 0 15px;
+	}
+}
+
+.required_no{
+	&::after{
+		content: "任意";
+		background: #E8E8E8;
+		font-size: 12px;
+		padding: 1px 10px;
+		margin: 0 0 0 15px;
+	}
+}
+
+.content-form .required {
+    display:none;
+}
+
+
+
+/*===============================
+フォントサイズの打ち消し
+================================*/
+.content-form th {
+    font-size: 13px;
+	font-weight: normal;
+	width: 20%;
+}
+
+.content-form input, .content-form textarea {
+    font-size: 13px;
+}
+
+
+.content-form td {
+    font-size: 13px;
+}
+
+.content-form fieldset {
+    padding: 0;
+    margin: 0;
+}
+
+.content-form table {
+    border-spacing: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.content-form {
+    margin-bottom: 0;
+}
+
+.content-form th, .content-form td {
+    padding: 0px;
+	@include mediaSMLmax{
+		width: 100%;
+		display: block;
+		box-sizing: border-box;
+	}
+}
+
+.content-form input, .content-form textarea {
+    padding: 0px;
+}
+
+.content-form legend {
+	display: none;
+}
+
+/*===============================
+Placeholderの色替え
+================================*/
+
+input::placeholder {
+margin: 0 0 0 10px;
+color:#A2A2A2;
+}
+
+/* IE */
+input:-ms-input-placeholder {
+color:#A2A2A2;
+margin: 0 0 0 10px;
+
+}
+
+/* Edge */
+input::-ms-input-placeholder {
+color:#A2A2A2;
+margin: 0 0 0 10px;
+
+}
+
+textarea::placeholder {
+color:#A2A2A2;
+margin: 0 0 0 10px;
+
+}
+
+/* IE */
+textarea:-ms-input-placeholder {
+color:#A2A2A2;
+margin: 0 0 0 10px;
+
+}
+
+/* Edge */
+textarea::-ms-input-placeholder {
+color:#A2A2A2;
+margin: 0 0 0 10px;
+
+}
+
+
+
+
+/*===============================
+ボタンのデザイン変更
+================================*/
+
+#action-button,#action-button-cover{
+	button {
+		border:none;
+		color: #fff;
+		background: #2F2F2E;
+		padding: 10px 70px;
+		cursor: pointer;
+		cursor: hand;
+		@include trans;
+	}
+	&:hover{
+		button {
+			background: #505050;
+		}
+	}
+}
+
+
+/*===============================
+予約フォーム確認画面
+================================*/
+.booking-form-people-number-row {
+	display: none;
+}
+
+#booking-confirm-fieldset {
+	tr{
+		&:first-child{
+			th{
+				display: none;
+			}
+			td{
+				font-size: 17px;
+				background:none;
+				background: none;
+				position: absolute;
+				max-width: 1060px;
+				border: 1px solid #ccc;
+				width: 100%;
+				padding: 20px 0;
+				box-sizing: border-box;
+				top: -100px;
+				text-align: center;
+				br{
+					margin: 15px;
+					@include mediaSMLmin{
+						content: "　";
+						position: relative;
+					}
+				}
+				&::before{
+					content: "ご来店のご予約内容";
+					position: absolute;
+					width: 140px;
+					left: 50%;
+					top: -10px;
+					background: #fff;
+					font-size: 13px;
+					margin-left: -65px;
+					text-align: center;
+					@include mediaSMLmin{
+						left: 90px;
+						top: 23px;
+					}
+				}
+			}
+		}
+		&:nth-child(3){
+			display: none;
+		}
+		&:nth-child(10){
+			display: none;
+		}
+	}
+	td{
+		background: #E8E8E8;
+		text-align: left;
+		border-bottom: 15px solid #fff;
+		padding: 19px;
+	}
+	th{
+		text-align: left;
+	}
+
+	.reservation_wrap td {
+		vertical-align: middle;
+	}
+
+
+	table {
+		margin: 100px 0 0;
+		position: relative;
+	}
+}
+
+
+
+.content-form .error-message {
+
+    margin: -25px 0 30px 0;
+}
+
+
+/*===============================
+commonの打ち消し
+================================*/
+.content_inner {
+	@include mediaSP{
+    	padding: 40px 20px 0px;
+	}
+}
+
+
+/*===============================
+個人情報取り扱いのチェックボックス
+================================*/
+
+div#terms-conditions {
+	z-index: 2;
+    position: relative;
+    left: 50%;
+    width: 140px;
+    margin-left: -100px;
+    top: 34px;
+
+	a{
+		border-bottom: solid 1px;
+		&::after{
+			content: "について同意する";
+			border-bottom: 1px solid #fff;
+			position: absolute;
+			width: 120px;
+			pointer-events: none;
+		}
+	}
+}
+
+#terms-conditions, #accedence-box, #button-message {
+    margin: 0;
+}
+
+div#accedence-box {
+	position: absolute;
+    left: 50%;
+    width: 100px;
+    bottom: 106px;
+    margin-left: -130px;
+	color: #fff;
+	bottom: 166px;
+}
+
+span.mwform-checkbox-field-text {
+    margin: 0 0 0 140px;
+}
+
+
+#action-button {
+
+    top: 80px;
+}
+
+/*===============================
+サンクスページ
+================================*/
+.reservation_text_thanks {
+    text-align: center;
+    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+	margin: 100px 0 180px;
+    font-size: 24px;
+    line-height: 60px;
+	@include mediaSP{
+		margin: 40px 0 90px;
+		font-size: 19px;
+		line-height: 3;
+	}
+}
+
+
+.info-message.booking-completed {
+    font-size: 20px;
+    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+    text-align: center;
+    margin: 100px 0 200px;
+}
+
+
+input#terms-accedence {
+    cursor: pointer;
+    cursor: hand;
+}
+

@@ -1,0 +1,610 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+body {
+	font-size:17px;
+  }
+
+
+
+#reservation,#reservation_check{
+	#pageHead  {
+		background-image: url(../images/reservation/bg_reservation_head.jpg);
+	}
+}
+
+
+
+.reservation_wrap {
+	max-width: 1060px;
+	margin: 0 auto 100px;
+	font-size: 13px;
+	@include mediaSP{
+		margin: 0 auto 20px;
+		overflow-x: scroll;
+	}
+}
+
+
+.reservation_txt {
+    text-align: left;
+    margin: 0 0 20px;
+	font-size: 18px;
+	@include mediaSP{
+		font-size: 15px;
+	}
+}
+
+.reservation_txt_r {
+	text-align: right;
+	font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体";
+	@include mediaSP{
+		font-size: 13px;
+	}
+}
+
+
+.reservation_txt2 {
+    text-align: left;
+    margin: 80px 0 20px;
+	font-size: 18px;
+	@include mediaSP{
+		font-size: 15px;
+		margin: 50px 0 10px;
+	}
+}
+
+.reservation_txt2_detail{
+    margin: 0 0 40px;
+	display: none;
+}
+#reservation{
+	.reservation_check_date {
+		display: none;
+	}
+}
+
+#reservation_check{
+	.reservation_txt2_detail{
+		margin: 0;
+		display: block;
+		text-align: center;
+	}
+	.reservation_check_date {
+		font-size: 20px;
+		text-align: center;
+		margin: 40px 0 20px;
+		font-weight: bold;
+	}
+}
+
+
+
+/*=================
+  パンくず
+=================*/
+
+.brunch {
+	@include mediaMIDmin {
+		top: 190px;
+		left: -70px;
+	  }
+  }
+/*===============================
+ラジオボタンで予約表を切り替え
+================================*/
+
+
+.reservation_radio{
+	margin: 0px 0 50px;
+	@include mediaPC{
+		display: flex;
+	}
+}
+
+#komaki {
+	#hamamatsu_calendar,#toyama_calendar{
+	  display: none;
+	}
+	.hamamatsu_wrap,.toyama_wrap {display: none;}
+}
+
+
+  #hamamatsu {
+	#komaki_calendar,#toyama_calendar{
+		display: none;
+	}
+	.komaki_wrap,.toyama_wrap {display: none;}
+  }
+
+  #toyama {
+	#komaki_calendar,#hamamatsu_calendar{
+		display: none;
+	}
+	.komaki_wrap,.hamamatsu_wrap {display: none;}
+  }
+
+
+  #foodList {
+	color: #f26778;
+	font-size: 18px;
+  }
+
+  #placeList {
+	color: #007af4;
+	font-size: 18px;
+  }
+
+  .form-check-label {
+	cursor:pointer
+  }
+
+
+/*===============================
+ラジオボタンのデザイン変更
+================================*/
+
+  $color1: #fff;
+  $color2: #2B2B2B;
+  $color3: #ADADAD;
+
+  .radio {
+    text-align: left;
+	@include mediaPC{
+		width: 15%;
+	}
+	input[type="radio"] {
+	  position: absolute;
+	  opacity: 0;
+	  + .radio-label {
+		&:before {
+		  content: '';
+		  background: $color1;
+		  border-radius: 100%;
+		  border: 1px solid darken($color1, 25%);
+		  display: inline-block;
+		  width: 1em;
+		  height: 1em;
+		  position: relative;
+		  vertical-align: top;
+		  cursor: pointer;
+		  text-align: center;
+		  left: -10px;
+		  top: 2px;
+		  @include trans;
+		}
+	  }
+	  &:checked {
+		+ .radio-label {
+		  &:before {
+			background-color: $color2;
+			box-shadow: inset 0 0 0 2px $color1;
+		  }
+		}
+	  }
+	  &:focus {
+		+ .radio-label {
+		  &:before {
+			outline: none;
+			border-color: $color3;
+		  }
+		}
+	  }
+
+	  + .radio-label {
+		&:empty {
+		  &:before {
+			margin-right: 0;
+		  }
+		}
+	  }
+	}
+  }
+.radio-label {
+	margin: 0 0 0 10px;
+}
+
+
+
+/*===============================
+アンカーの位置調整
+================================*/
+#komaki,#hamamatsu,#toyama {
+	padding: 1360px 0 0;
+    margin: -1360px 0 0;
+	font-size: 13px;
+	//h3{display: none;}
+}
+
+
+
+
+
+
+/*===============================
+フォームのデザイン調整
+================================*/
+
+
+.input_wrap, .textarea_wrap{
+
+	text-align: left;
+	margin: 0 0 30px;
+	@include mediaPC{
+		display: flex;
+		justify-content: space-between;
+		p{
+			width: 75%;
+		}
+	}
+}
+.input_wrap {
+    align-items: center;
+}
+.textarea_wrap {
+	align-items: center;
+}
+
+input,textarea {
+    border: none;
+    background: #EBEBEB;
+    padding: 13px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.content-form legend {
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 5px;
+	padding-inline-start: 0px;
+    padding-inline-end: 0px;
+}
+
+/*===============================
+「必須」、「任意」のアイコン追加
+================================*/
+
+
+.required_add,.required_no{
+	@include mediaPC{
+	width: 20%;
+	min-width: 210px;
+	}
+	&::after{
+		font-size: 12px;
+		padding: 1px 10px;
+		margin: 0 0 0 15px;
+	}
+	@include mediaSP{
+			margin: 0 0 10px 0;
+	}
+}
+
+.required_add{
+	&::after{
+		content: "必須";
+		background: #C9D1D0;
+	}
+}
+
+.required_no{
+	&::after{
+		content: "任意";
+		background: #E8E8E8;
+	}
+}
+
+.reservation_txt {
+	&.required_add{
+		@include mediaPC{
+			width: 100%;
+		}
+	}
+}
+
+
+/*===============================
+「内容を確認する」ボタンのデザイン調整
+================================*/
+
+.btn_confirm {
+	input{
+	border: none;
+    color: #fff;
+    background: #2F2F2E;
+    width: 200px;
+    cursor: pointer;
+    cursor: hand;
+	@include trans;
+	&:hover{
+		background: #505050;
+	}
+}
+}
+
+
+.link_privacy{
+	margin: 0px;
+	@include mediaSP{
+		margin: 0;
+	}
+	a{
+		border-bottom: 1px solid;
+	}
+}
+
+
+.check_wrap {
+	display: flex;
+	justify-content: center;
+	margin: 40px ;
+	align-items: center;
+	@include mediaSP{
+		margin: 40px 0;
+	}
+}
+
+.form_check {
+    width: 45px;
+}
+
+.btn_confirm {
+    display: flex;
+	justify-content: center;
+}
+/*----------------------------------------------------------
+フォーム チェックボックスのデザインを変える
+----------------------------------------------------------*/
+
+
+input[type="checkbox"] {
+	/* デフォルトcheckボックス非表示*/
+	display: none;
+  }
+  .mwform-checkbox-field-text {
+	display: inline-block;
+	position: relative;
+	padding: 0 36px 0 36px;
+  }
+  .mwform-checkbox-field-text::before,
+  .mwform-checkbox-field-text::after {
+	content: "";
+	position: absolute;
+	display: block;
+  }
+  .mwform-checkbox-field-text::before {
+	background: #F2F2F2;
+	width: 35px;
+	height: 35px;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+  }
+  .mwform-checkbox-field-text::after {
+	border-width: 2px;
+	border-color: transparent transparent #000 #000;
+	border-style: solid;
+	width: 15px;
+	height: 7px;
+	margin-top: -0.3em;
+	top: 50%;
+	left: 8px;
+	transform: translateY(-50%) rotate(-45deg);
+	opacity: 0;
+  }
+  input[type="checkbox"]:checked + .mwform-checkbox-field-text::after {
+	/* css擬似要素 :checked が付加されているときは表示*/
+	opacity: 1;
+  }
+
+  .form_check{
+	label{
+	  justify-content: center;
+	  margin: 50px 0;
+	  @include mediaPC{
+		margin: 0 0 50px;
+	  }
+	}
+	span{
+		padding: 0 0 35px ;
+		cursor: pointer;
+		cursor: hand;
+		@include mediaSP{
+			padding: 0 0 35px;
+		}
+	}
+  }
+
+  span.error {
+    position: absolute;
+}
+
+
+.radio_wrap{
+	span.error {
+		position: unset;
+	}
+}
+
+span.mwform-radio-field-text {
+    font-size: 17px;
+}
+
+ .mw_wp_form_complete {
+	margin: 100px 0;
+	 p{
+		font-size: 24px;
+		font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+		line-height: 3;
+		letter-spacing: 6px;
+		text-align:center ;
+		@include mediaSP{
+			font-size: 21px;
+			letter-spacing: 3px;
+		}
+	}
+}
+
+.btn_confirm {
+    text-align: center;
+    margin: 20px 0 100px;
+	@include mediaSP{
+		margin: 20px 0 20px;
+	}
+}
+
+
+
+/*----------------------------------------------------------
+フォームチェックでフォーム全体のスタイルを打ち消し
+----------------------------------------------------------*/
+
+#reservation_check{
+	.required_add{
+		&::after{
+			display: none;
+		}
+	}
+
+	.required_no{
+		&::after{
+			display: none;
+		}
+	}
+
+	.input_wrap p, .textarea_wrap p {
+		background: #E8E8E8;
+		padding: 19px;
+		min-height: 19px;
+		@include mediaPC{
+			width: 75%;
+		}
+	}
+
+	.check_wrap{
+		display: none;
+	}
+
+	.radio-btns {
+		text-align: center;
+		margin: 60px 0;
+		font-size: 18px;
+		border: 1px solid #2F2F2E;
+		padding: 10px;
+
+		@include mediaSP{
+			font-size: 15px;
+			margin: 50px 0 10px;
+		}
+		&::before{
+			content: "店舗名：";
+		}
+	}
+
+	.reservation_txt2 {
+		display: none;
+	}
+
+
+	.reservation_txt{
+		text-align: center;
+		font-size: 20px;
+		font-weight: bold;
+		margin: 0 0 30px;
+	}
+
+}
+
+
+
+
+/*----------------------------------------------------------
+ラジオボタンのデザイン修正
+----------------------------------------------------------*/
+
+/* ラジオボタンを隠す */
+input.radio-btns__item {
+    display: none;
+}
+
+
+.radio-btns {
+	margin: 0 0 80px;
+	@include mediaSP{
+		margin: 0 0 30px;
+	}
+}
+
+  .radio-btns label {
+	display: inline-block;
+	cursor: pointer;
+    cursor: hand;
+	@include mediaSP{
+		display: block;
+	}
+  }
+
+  /* spanの左側にボタンを配置するスペースを作る */
+  .radio-btns .radio-btns__item + span {
+    padding-left: 35px;
+    display: inline-block;
+    position: relative;
+    padding-right: 30px;
+  }
+
+  /* 各パーツを作成 */
+  .radio-btns .radio-btns__item + span::after,
+  .radio-btns .radio-btns__item + span::before {
+	content: '';
+	display: block;
+	position: absolute;
+	border: 1px solid #AAAAAA;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	top: 0;
+	left: 0;
+	@include trans;
+  }
+
+  /* after上書き */
+  .radio-btns .radio-btns__item + span::after{
+	opacity: 0;
+	width: 14px;
+	height: 14px;
+	top: 4px;
+    left: 4px;
+    border: none;
+    background: #2B2B2B;
+  }
+
+  /*
+	checked状態
+	文字のcolorとボタンのopacityを変更
+  */
+
+
+  .radio-btns .radio-btns__item:checked + span::after {
+	opacity: 1;
+  }
+
+  span.mwform-radio-field.horizontal-item {
+    margin: 0 60px 0 0;
+}
+
+
+input[type="submit"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+
+.thanks_text {
+    text-align: center;
+    font-size: 16px;
+	p{
+		margin: 0 0 10px;
+	}
+}

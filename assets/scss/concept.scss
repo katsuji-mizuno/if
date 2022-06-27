@@ -1,0 +1,122 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+#concept{
+  #pageHead  {
+    background-image: url(../images/concept/bg_concept_head.jpg);
+    background-size: contain;
+  }
+}
+
+
+
+/*----------------------------------------------------
+main
+----------------------------------------------------*/
+
+
+
+/*----------------------------------------------------
+concept_block
+----------------------------------------------------*/
+
+.concept_block {
+  max-width: 1060px;
+  margin: 0 auto 70px;
+  &:last-child{
+    margin: 0 auto;
+  }
+}
+
+.concept_block_inner {
+  @include mediaPC{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row-reverse;
+  }
+}
+
+
+@include mediaPC{
+  .concept_block_img {
+    width: 40%;
+  }
+
+  .concept_block_text {
+    &.add_image{
+      width: 55%;
+    }
+  }
+}
+
+.concept_block_tit_wrap {
+  display: flex;
+  align-items: flex-start;
+  @include mediaSP{
+    align-items: center;
+    margin: 0px 0 20px;
+  }
+}
+
+.concept_block_num {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 24px;
+  position: relative;
+  &::after {
+    content: "";
+    border-top: 1px solid #000;
+    width: 60px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(-60deg);
+    position: absolute;
+    top: 33px;
+    @include mediaSP{
+      top: 13px;
+    }
+  }
+}
+
+.concept_block_tit {
+  font-size: 17px;
+  margin: 0 0 0 60px;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+
+  @include mediaPC{
+  margin: 24px 0 0 60px;
+  }
+}
+
+
+.concept_block_txt {
+  @include mediaPC{
+  margin: 30px 0 0 85px;
+  }
+  font-size: 13px;
+  line-height: 2;
+}
+
+.btn_concept {
+  margin: 30px auto;
+  text-align: center;
+  @include mediaPC{
+    margin: 60px auto;
+    text-align: right;
+  }
+  a {
+    background: #546C6C;
+    color: #fff;
+    font-size: 13px;
+    @include mediaPC{
+      padding: 20px 100px;
+      @include trans;
+      &:hover{
+        background: #505050;
+      }
+    }
+    @include mediaSP{
+      display: block;
+      padding: 10px 0;
+    }
+  }
+}

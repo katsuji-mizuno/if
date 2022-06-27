@@ -1,0 +1,103 @@
+/***********************共通設定************************/
+
+$text: #211712;
+$link: #2A2727;
+
+$blue: #1B65B9;
+$blue_light: #0682EE;
+$blue_text: #1B65B9;
+$blue_hov: #0682EE;
+
+$line: #E3E3E3;
+
+$red: #C63C2B;
+$red_hov: #B73525;
+
+$white: #FFFFFF;
+$black: #000000;
+
+
+
+
+
+//break point
+$w_sp: 750px;
+$w_sml: 1000px;
+$w_mid: 1300px;
+
+
+@mixin mediaSP {  /* 750以下  */
+  @media all and (max-width: $w_sp) {@content;}
+}
+@mixin mediaPC {  /* 751以上 */
+  @media all and (min-width: $w_sp + 1) {@content;}
+}
+
+@mixin mediaSMLmax {  /* 1000以下  */
+  @media all and (max-width: $w_sml) {@content;}
+}
+
+@mixin mediaSMLmin {  /* 1001以上  */
+  @media all and (min-width: $w_sml + 1) {@content;}
+}
+
+
+
+
+
+@mixin mediaMIDmax {  /* 1300以下  */
+  @media all and (max-width: $w_mid) {@content;}
+}
+
+@mixin mediaMIDmin {  /* 1301以上  */
+  @media all and (min-width: $w_mid + 1) {@content;}
+}
+
+
+
+@mixin cont {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+}
+
+@mixin trans {  transition: all .3s;}
+@mixin trans1 {  transition: all .5s;}
+@mixin trans2 {  transition: all .7s;}
+@mixin trans3 {  transition: all 1.0s;}
+@mixin trans4 {  transition: all 2.5s;}
+
+
+@mixin font_navi {
+  font-family:
+  Noto Sans JP,
+  'Noto Sans Japanese',
+  'ヒラギノ角ゴ Pro W4',
+  'Hiragino Kaku Gothic Pro',
+  'ヒラギノ丸ゴ Pro W4',
+  'Hiragino Maru Gothic Pro',
+  YuGothic,
+  '游ゴシック',
+  'メイリオ',
+  'Meiryo',
+  'Osaka',
+  'ＭＳ Ｐゴシック',
+  sans-serif;
+}
+
+@mixin font_footer {
+  font-family:
+  'ヒラギノ丸ゴ Pro W4',
+  'Hiragino Maru Gothic Pro',
+  'ヒラギノ角ゴ Pro W4',
+  'Hiragino Kaku Gothic Pro',
+  YuGothic,
+  '游ゴシック',
+  Noto Sans JP,
+  'メイリオ',
+  'Meiryo',
+  'Osaka',
+  'ＭＳ Ｐゴシック';
+}

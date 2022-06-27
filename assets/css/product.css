@@ -1,0 +1,242 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+#product #pageHead {
+  background-image: url(../images/product/bg_product_head.jpg);
+}
+
+#main {
+  position: relative;
+  /* 1300以下  */
+  /* 750以下  */
+}
+@media all and (max-width: 1300px) {
+  #main {
+    margin: 30px 0px;
+  }
+}
+@media all and (max-width: 750px) {
+  #main {
+    margin: 20px 0;
+  }
+}
+
+/*=================
+  パンくず
+=================*/
+.brunch {
+  /* 1301以上  */
+}
+@media all and (min-width: 1301px) {
+  .brunch {
+    top: 220px;
+    left: -100px;
+  }
+}
+
+/*----------------------------------------------------
+content
+----------------------------------------------------*/
+.content_inner {
+  padding: 80px 0 0;
+  margin: 0 auto;
+  text-align: left;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .content_inner {
+    padding: 40px 0px 20px;
+  }
+}
+
+.gallery_tit {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  max-width: 1060px;
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .gallery_tit {
+    font-size: 20px;
+    margin: 0 20px;
+  }
+}
+.gallery_tit span {
+  display: block;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-size: 17px;
+}
+
+.gallery_wrap {
+  padding: 100px 0 180px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .gallery_wrap {
+    padding: 40px 0 80px;
+  }
+}
+.gallery_wrap:nth-child(even) {
+  background: #F2F2F2;
+  background-image: url(../images/product/bg_product_even.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.gallery_wrap:nth-child(odd) {
+  background-image: url(../images/product/bg_product_odd.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.gallery_wrap:nth-child(5) {
+  background-image: none;
+  padding: 60px 0 0;
+}
+.gallery_wrap:nth-child(1) .gallery_tit::before, .gallery_wrap:nth-child(2) .gallery_tit::before, .gallery_wrap:nth-child(3) .gallery_tit::before, .gallery_wrap:nth-child(4) .gallery_tit::before, .gallery_wrap:nth-child(5) .gallery_tit::before {
+  font-size: 200px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  position: absolute;
+  color: #E2E2E2;
+  z-index: -1;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .gallery_wrap:nth-child(1) .gallery_tit::before, .gallery_wrap:nth-child(2) .gallery_tit::before, .gallery_wrap:nth-child(3) .gallery_tit::before, .gallery_wrap:nth-child(4) .gallery_tit::before, .gallery_wrap:nth-child(5) .gallery_tit::before {
+    font-size: 120px;
+  }
+}
+.gallery_wrap:nth-child(1) .gallery_tit::before, .gallery_wrap:nth-child(2) .gallery_tit::before, .gallery_wrap:nth-child(3) .gallery_tit::before, .gallery_wrap:nth-child(4) .gallery_tit::before {
+  right: 0;
+  top: -60px;
+}
+.gallery_wrap:nth-child(1) .gallery_tit::before {
+  content: "01";
+}
+.gallery_wrap:nth-child(2) .gallery_tit::before {
+  content: "02";
+}
+.gallery_wrap:nth-child(3) .gallery_tit::before {
+  content: "03";
+}
+.gallery_wrap:nth-child(4) .gallery_tit::before {
+  content: "04";
+}
+.gallery_wrap:nth-child(5) .gallery_tit::before {
+  content: "05";
+  top: -160px;
+  z-index: -1;
+  /* 751以上 */
+  /* 750以下  */
+}
+@media all and (min-width: 751px) {
+  .gallery_wrap:nth-child(5) .gallery_tit::before {
+    left: 120px;
+  }
+}
+@media all and (max-width: 750px) {
+  .gallery_wrap:nth-child(5) .gallery_tit::before {
+    right: 10px;
+    top: -60px;
+  }
+}
+.gallery_wrap:nth-child(5) .gallery_tit::after {
+  content: "";
+  background-image: url(../images/top/icon_patent.png);
+  width: 145px;
+  height: 145px;
+  position: absolute;
+  background-size: cover;
+  top: 100px;
+  left: 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .gallery_wrap:nth-child(5) .gallery_tit::after {
+    display: none;
+  }
+}
+
+#coating {
+  padding: 240px 0 0;
+  margin: -80px 0 0;
+}
+
+.swiper-container {
+  margin: 50px 0;
+  z-index: 2;
+}
+
+.gallery_tit_wrap {
+  max-width: 1060px;
+  margin: 0 auto;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .gallery_tit_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .gallery_tit_wrap .gallery_tit {
+    width: 40%;
+  }
+}
+
+.coating_txt {
+  text-align: left;
+  line-height: 2;
+  /* 751以上 */
+  /* 750以下  */
+}
+@media all and (min-width: 751px) {
+  .coating_txt {
+    width: 60%;
+  }
+}
+@media all and (max-width: 750px) {
+  .coating_txt {
+    margin: 30px 20px;
+  }
+}
+
+.btn_panflet {
+  /* 750以下  */
+}
+.btn_panflet a {
+  background: #546C6C;
+  max-width: 1060px;
+  margin: 60px auto;
+  color: #fff;
+  display: block;
+  padding: 20px;
+  font-size: 16px;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn_panflet a:hover {
+  background: #505050;
+}
+@media all and (max-width: 750px) {
+  .btn_panflet {
+    margin: 0 20px;
+  }
+}
+
+.coating_badge {
+  /* 751以上 */
+  float: right;
+  width: 42%;
+  margin: 0px 0 20px 20px;
+}
+@media all and (min-width: 751px) {
+  .coating_badge {
+    display: none;
+  }
+}
+/*# sourceMappingURL=product.css.map */

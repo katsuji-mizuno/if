@@ -1,0 +1,319 @@
+@charset "utf-8";
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet::before, .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, [class^=swiper-button-] {
+  transition: all 0.3s ease;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery_wrap {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.swiper-container.gallery_main {
+  width: 100%;
+  transition: opacity 0.6s ease;
+}
+
+
+.swiper-container.gallery_main .swiper-slide img {
+	max-width: 1200px;
+	height: auto;
+	opacity: 0;
+}
+
+.swiper-container.loading {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  border-radius: 6px;
+}
+.swiper-slide img {
+	width: 100%;
+	height: auto;
+}
+
+
+
+
+
+.swiper-container.gallery_thumbs {
+	max-width: 550px;
+	margin: 0 auto;
+}
+
+.swiper-container.gallery_thumbs .swiper-wrapper {
+	height: auto!important;
+}
+
+.swiper-container.gallery_thumbs .swiper-wrapper .swiper-slide {
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 0;
+}
+
+
+.gallery_thumbs .swiper-slide img {
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.gallery_thumbs .swiper-slide {
+	position: relative;
+	height: auto!important;
+}
+
+.gallery_thumbs .swiper-slide::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	left: 0;
+	bottom: 0;
+	background: rgba(255,255,255,0.5);
+	transform-origin: left center;
+	transform: scaleX(0);
+}
+.gallery_thumbs .swiper-slide-thumb-active::after {
+	animation: gauge 2.5s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+
+
+/*  サムネイルのコピー  はじめ*/
+
+
+/*  B  */
+
+.swiper-container.gallery_thumbs_b {
+	max-width: 550px;
+	margin: 0 auto;
+}
+
+.swiper-container.gallery_thumbs_b .swiper-wrapper {
+	height: auto!important;
+}
+
+.swiper-container.gallery_thumbs_b .swiper-wrapper .swiper-slide {
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 0;
+}
+
+
+.gallery_thumbs_b .swiper-slide img {
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.gallery_thumbs_b .swiper-slide {
+	position: relative;
+	height: auto!important;
+}
+
+.gallery_thumbs_b .swiper-slide::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	left: 0;
+	bottom: 0;
+	background: rgba(255,255,255,0.5);
+	transform-origin: left center;
+	transform: scaleX(0);
+}
+.gallery_thumbs_b .swiper-slide-thumb-active::after {
+	animation: gauge 2.5s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+
+/*  C  */
+
+.swiper-container.gallery_thumbs_c {
+	max-width: 550px;
+	margin: 0 auto;
+}
+
+.swiper-container.gallery_thumbs_c .swiper-wrapper {
+	height: auto!important;
+}
+
+.swiper-container.gallery_thumbs_c .swiper-wrapper .swiper-slide {
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 0;
+}
+
+
+.gallery_thumbs_c .swiper-slide img {
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.gallery_thumbs_c .swiper-slide {
+	position: relative;
+	height: auto!important;
+}
+
+.gallery_thumbs_c .swiper-slide::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	left: 0;
+	bottom: 0;
+	background: rgba(255,255,255,0.5);
+	transform-origin: left center;
+	transform: scaleX(0);
+}
+.gallery_thumbs_c .swiper-slide-thumb-active::after {
+	animation: gauge 2.5s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+
+/*  D  */
+
+.swiper-container.gallery_thumbs_d {
+	max-width: 550px;
+	margin: 0 auto;
+}
+
+.swiper-container.gallery_thumbs_d .swiper-wrapper {
+	height: auto!important;
+}
+
+.swiper-container.gallery_thumbs_d .swiper-wrapper .swiper-slide {
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 0;
+}
+
+
+.gallery_thumbs_d .swiper-slide img {
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.gallery_thumbs_d .swiper-slide {
+	position: relative;
+	height: auto!important;
+}
+
+.gallery_thumbs_d .swiper-slide::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	left: 0;
+	bottom: 0;
+	background: rgba(255,255,255,0.5);
+	transform-origin: left center;
+	transform: scaleX(0);
+}
+.gallery_thumbs_d .swiper-slide-thumb-active::after {
+	animation: gauge 2.5s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+
+/*  サムネイルのコピー  終わり*/
+
+
+
+
+@keyframes gauge {
+0% {
+	transform: scaleX(0);
+}
+100% {
+	transform: scaleX(1);
+}
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+	width: 40px;
+}
+.swiper-button-next {
+	right: 10vw;
+}
+.swiper-button-prev {
+	left: 10vw;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+	font-family: inherit;
+	font-size: 0;
+	outline: none;
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	border: none;
+	z-index: 1;
+	width: 40px;
+	height: 40px;
+	background-size: cover;
+	background-position: center center;
+}
+
+
+.swiper-button-next::after {
+	background-image: url(../../../images/product/arrow_right.png);
+}
+.swiper-button-prev::after {
+	background-image: url(../../../images/product/arrow_left.png);
+}
+
+@media(max-width: 768px) {
+.swiper-container.gallery_main {
+  margin-bottom: 25px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+	width: 20px;
+}
+.swiper-button-next {
+	right: 10px;
+}
+.swiper-button-prev {
+	left: 10px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+	width: 20px;
+	height: 20px;
+}
+
+.swiper-container.gallery_thumbs,
+.swiper-container.gallery_thumbs_b,
+.swiper-container.gallery_thumbs_c,
+.swiper-container.gallery_thumbs_d
+{
+	max-width: 86vw;
+	margin: 0 auto;
+}
+}

@@ -1,0 +1,477 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+#showroom{
+	#pageHead  {
+		background-image: url(../images/showroom/bg_showroom_head.jpg);
+	}
+}
+
+.showroom_wrap {
+	max-width: 1060px;
+	margin: 0 auto;
+}
+
+/*----------------------------------------------------
+ページ内リンクボタン
+----------------------------------------------------*/
+.showroom_nav {
+	ul{
+		@include mediaPC{
+			display: flex;
+		}
+	}
+	li{
+		text-align: center;
+				padding: 15px;
+		position: relative;
+		&::before,&::after{
+			content: "";
+			position: absolute;
+			@include trans;
+		}
+
+		&::before{
+			right: 33px;
+			width: 1px;
+			height: 9px;
+			background: #fff;
+			top: 22px;
+		}
+		&::after{
+			right: 30px;
+			top: 24px;
+			width: 6px;
+			height: 6px;
+			border-top: 1px solid #fff;
+			border-right: 1px solid #fff;
+			-webkit-transform: rotate(135deg);
+			transform: rotate(135deg);
+		}
+		&:hover{
+			&::before{
+				top: 27px;
+			}
+			&::after{
+				top: 29px;
+			}
+		}
+	}
+	a{
+		width: 100%;
+		color: #fff;
+		&:nth-child(2){
+			margin: 0 2px;
+		}
+
+	}
+}
+
+
+/*=================
+  パンくず
+=================*/
+
+.brunch {
+	@include mediaMIDmin {
+		top: 190px;
+		left: -70px;
+	  }
+  }
+/*----------------------------------------------------
+ページ内リンク表示位置調整
+----------------------------------------------------*/
+
+#komaki,#hamamatsu,#toyama {
+	padding: 60px 0 0;
+    margin: -60px 0 0;
+}
+
+.anchorlink {
+	position: relative;
+	top: -120px;
+	display: block;
+}
+
+/*----------------------------------------------------
+ショールームINFO
+----------------------------------------------------*/
+
+.showroom_info {
+	@include mediaPC{
+	display: flex;
+	margin: 0 0 100px 0;
+	justify-content: space-between;
+	padding: 100px 0 0;
+	}
+}
+
+.showroom_img {
+	@include mediaPC{
+	width: 45%;
+	}
+	@include mediaSP{
+		display: none;
+	}
+}
+
+.showroom_img_sp{
+	@include mediaPC{
+		display: none;
+	}
+}
+
+.showroom_text {
+	@include mediaPC{
+	width: 50%;
+	}
+	text-align: left;
+	position: relative;
+}
+
+.showroom_text_tit {
+	font-size: 26px;
+	line-height: 1;
+	font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+
+	@include mediaSP{
+		margin: 60px 0 30px;
+	}
+}
+
+.showroom_instagram {
+    width: 52px;
+    position: absolute;
+    bottom: 77px;
+    right: 0px;
+	@include mediaSP{
+	width: 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+	}
+}
+
+.showroom_text_address {
+	margin: 30px 0;
+    letter-spacing: 1px;
+	li{
+		border-top:solid 1px #E4E4E4;
+		padding: 5px 0px;
+		@include mediaPC{
+			display: flex;
+		}
+		&:last-child{
+			border-bottom:solid 1px #E4E4E4;
+		}
+		div{
+			&:first-child{
+				width: 20%;
+			}
+		}
+	}
+
+}
+
+
+.showroom_text_tel {
+	@include mediaPC{
+		display: flex;
+		align-items: baseline;
+	}
+	@include mediaSP{
+		text-align: center;
+	}
+	span{
+		font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+
+		font-size: 24px;
+		border-bottom: 1px solid #2B2B2B;
+		position: relative;
+		margin: 0 20px 0 50px;
+
+		&::before{
+			content: "";
+			background-image: url(../images/showroom/showroom_tel.png);
+			width: 20px;
+			height: 34px;
+			position: absolute;
+			background-size: contain;
+			top: 5px;
+			left: -50px;
+			background-repeat: no-repeat;
+
+		}
+		@include mediaSP{
+			margin: 0 auto;
+			text-align: center;
+			&::before{
+				width: 19px;
+				height: 32px;
+				top: -4px;
+				left: -28px;
+			}
+		}
+	}
+}
+
+
+.showroom_text_btn{
+    color: #fff;
+    text-align: center;
+	padding: 15px;
+    margin: 20px 0 0;
+	cursor: pointer;
+	cursor: hand;
+	@include trans;
+	&:hover{
+	background: #505050;
+	}
+	.komaki{
+		background: #867662;
+	}
+	.hamamatsu{
+		background: #554848;
+	}
+	.toyama{
+		background: #546C6C;
+	}
+}
+
+
+/*===============================
+ ショールームMAP
+================================*/
+
+.showroom_map {
+    text-align: left;
+	@include mediaSP{
+		margin: 60px 0 0px;
+	}
+}
+
+.showroom_map_tit {
+    font-size: 18px;
+	position: relative;
+    margin: 0 0 0 20px;
+	&::before{
+		content: "";
+		background: #867662;
+		width: 8px;
+		height: 19px;
+		position: absolute;
+		top: 9px;
+		left: -20px;
+	}
+}
+
+#komaki{	.showroom_map_tit {	&::before{background: #867662;}}}
+#hamamatsu{	.showroom_map_tit {	&::before{background: #554848;}}}
+#toyama{	.showroom_map_tit {	&::before{background: #546C6C;}}}
+
+
+.showroom_map_txt {
+	font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体";
+	line-height: 3;
+}
+
+
+/*===============================
+ ショールーム　お知らせ
+================================*/
+
+.showroom_news {
+	text-align: left;
+    margin: 80px 0;
+	@include mediaPC{
+		display: flex;
+	}
+	@include mediaSP{
+		position: relative;
+		margin: 60px 0 160px;
+	}
+}
+
+.showroom_news_tit_index {
+	@include mediaPC{
+    width: 30%;
+	}
+}
+
+.showroom_news_tit{
+    font-size: 18px;
+	position: relative;
+    margin: 0 0 30px 20px;
+	line-height: 1;
+	&::before{
+		content: "";
+		width: 8px;
+		height: 19px;
+		position: absolute;
+		left: -20px;
+	}
+}
+
+#komaki{	.showroom_news_tit {	&::before{background: #867662;}}}
+#hamamatsu{	.showroom_news_tit {	&::before{background: #554848;}}}
+#toyama{	.showroom_news_tit {	&::before{background: #546C6C;}}}
+
+.showroom_news_index {
+    margin: 60px 0 0;
+	@include mediaSP{
+		position: absolute;
+		bottom: -138px;
+		left: 50%;
+	}
+}
+
+.showroom_news_list_tit {
+    margin: 10px 0 0;
+}
+
+.showroom_news_list_wrap {
+	@include mediaPC{
+		width: 70%;
+	}
+}
+
+.showroom_news_list {
+	padding: 30px 0;
+	&:nth-child(1){
+		padding:0 0 30px 0;
+	}
+	&:nth-child(2){
+		border-bottom: 1px solid #D1D1D1;
+		border-top: 1px solid #D1D1D1;
+	}
+}
+
+.showroom_news_cat_time {
+    display: flex;
+}
+
+.showroom_news_list_time {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	color: #7C7C7C;
+	line-height: 1;
+    margin: 0 20px 0 0;
+}
+
+a.news_list_tit_link{
+	position: relative;
+	left: 0px;
+	@include trans;
+	&:hover{
+		left: 10px;
+	}
+}
+
+/*===============================
+ ショールーム　Bottomライン
+================================*/
+
+.showroom_bottomline {
+    border-bottom: 1px solid #C6C6C6;
+	margin: 0 calc(50% - 50vw);
+}
+
+
+
+
+
+/*=================
+  ホバー時にくるっと弧を描くボタン
+=================*/
+
+.showroom_instagram {
+@include mediaPC{
+	.cp_arrows *, .cp_arrows *:before, .cp_arrows *:after {
+		-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+	}
+
+	.cp_arrows .link {
+		cursor: pointer;
+		text-decoration: none;
+	  position: relative;
+	}
+
+	.cp_arrows .cp_arrow .arrow_icon {
+		position: relative;
+		-webkit-transition: -webkit-transform 0.3s ease;
+				transition: -webkit-transform 0.3s ease;
+				transition:         transform 0.3s ease;
+				transition:         transform 0.3s ease, -webkit-transform 0.3s ease;
+		vertical-align: middle;
+	}
+	.cp_arrows .cp_arrow .arrow_icon_circle {
+		-webkit-transition: stroke-dashoffset 0.3s ease;
+				transition: stroke-dashoffset 0.3s ease;
+		stroke-dasharray: 95;
+		stroke-dashoffset: 95;
+	}
+
+	.cp_arrows .cp_arrow:hover .arrow_icon_circle {
+		stroke-dashoffset: 0;
+	}
+
+	.index_circle {
+	width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    border: none;
+    z-index: -1;
+	}
+}
+
+@include mediaSP{
+	.cp_arrows {
+	height: 120px;
+	}
+
+	.arrow_icon, .arrow_icon_circle{
+	display: none;
+	}
+
+	.index_circle {
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		border: none;
+		color: #000;
+		font-family: Georgia, "Times New Roman", Times, serif;
+		position: absolute;
+		left: 50%;
+		margin-left: -10px;
+	&::after {
+		content: "";
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		border: none;
+		position: absolute;
+		top: -5px;
+		left: -5px;
+	}
+	}
+
+	}
+}
+
+
+/*=================
+  ホームボタン
+=================*/
+
+
+.btn_home {
+	@include mediaSP{
+		margin: 200px auto 40px;
+	}
+}
+
+
+

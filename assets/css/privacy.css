@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+#privacy #pageHead {
+  background-image: url(../images/privacy/bg_privacy_head.jpg);
+}
+
+.policy_wrap {
+  max-width: 1060px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 2;
+}
+.policy_wrap li {
+  margin: 0px 0 50px;
+}
+.policy_wrap span {
+  font-weight: bold;
+  display: block;
+}
+/*# sourceMappingURL=privacy.css.map */

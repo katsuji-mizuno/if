@@ -1,0 +1,346 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+#inquiry #pageHead, #inquiry_check #pageHead {
+  background-image: url(../images/inquiry/bg_inquiry_head.jpg);
+}
+
+.content_inner {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+/*===============================
+「予約」、「ショールーム」へのリンク
+================================*/
+.inqury_link {
+  text-align: left;
+}
+
+.inqury_link_text {
+  text-align: left;
+}
+
+.inqury_link_btn {
+  /* 751以上 */
+  margin: 20px 0 60px;
+}
+@media all and (min-width: 751px) {
+  .inqury_link_btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.inqury_link_btn_reservation a, .inqury_link_btn_showroom a {
+  color: #fff;
+  padding: 15px 60px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.inqury_link_btn_reservation a:hover, .inqury_link_btn_showroom a:hover {
+  background: #505050;
+}
+
+.inqury_link_btn_reservation {
+  margin: 0 0 0 10px;
+  /* 750以下  */
+}
+.inqury_link_btn_reservation a {
+  background: #2B2B2B;
+}
+@media all and (max-width: 750px) {
+  .inqury_link_btn_reservation {
+    margin: 30px 0 0 0px;
+    display: block;
+  }
+}
+
+.inqury_link_btn_showroom {
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .inqury_link_btn_showroom {
+    margin: 40px 0 0;
+  }
+}
+.inqury_link_btn_showroom a {
+  background: #546C6C;
+}
+
+/*===============================
+フォームのデザイン調整
+================================*/
+.input_wrap, .textarea_wrap {
+  text-align: left;
+  margin: 0 0 30px;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .input_wrap, .textarea_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .input_wrap p, .textarea_wrap p {
+    width: 75%;
+  }
+}
+
+.input_wrap {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.textarea_wrap {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.textarea_wrap .required_add, .textarea_wrap .required_no {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .textarea_wrap .required_add, .textarea_wrap .required_no {
+    width: 25%;
+    padding: 15px 0 0;
+  }
+}
+.textarea_wrap .required_add::after, .textarea_wrap .required_no::after {
+  font-size: 12px;
+  padding: 1px 10px;
+  margin: 0 0 0 15px;
+}
+
+input, textarea {
+  border: none;
+  background: #EBEBEB;
+  padding: 13px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.content-form legend {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 0 5px;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+  -webkit-padding-end: 0px;
+          padding-inline-end: 0px;
+}
+
+/*===============================
+「必須」、「任意」のアイコン追加
+================================*/
+.required_add, .required_no {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .required_add, .required_no {
+    width: 25%;
+    padding: 15px 0 0;
+  }
+}
+.required_add::after, .required_no::after {
+  font-size: 12px;
+  padding: 1px 10px;
+  margin: 0 0 0 15px;
+}
+
+.required_add::after {
+  content: "必須";
+  background: #C9D1D0;
+}
+
+.required_no::after {
+  content: "任意";
+  background: #E8E8E8;
+}
+
+/*===============================
+「内容を確認する」ボタンのデザイン調整
+================================*/
+.btn_confirm input {
+  border: none;
+  color: #fff;
+  background: #2F2F2E;
+  width: 200px;
+  cursor: pointer;
+  cursor: hand;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn_confirm input:hover {
+  background: #505050;
+}
+
+.link_privacy {
+  margin: 0px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .link_privacy {
+    margin: 0 0 0 45px;
+  }
+}
+.link_privacy a {
+  border-bottom: 1px solid;
+}
+
+.check_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 80px 50px 50px 0;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .check_wrap {
+    margin: 80px 0 50px 0;
+  }
+}
+
+/*----------------------------------------------------------
+フォーム チェックボックスのデザインを変える
+----------------------------------------------------------*/
+input[type=checkbox] {
+  /* デフォルトcheckボックス非表示*/
+  display: none;
+}
+
+.mwform-checkbox-field-text {
+  display: inline-block;
+  position: relative;
+  padding: 0 36px 0 36px;
+}
+
+.mwform-checkbox-field-text::before,
+.mwform-checkbox-field-text::after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+.mwform-checkbox-field-text::before {
+  background: #F2F2F2;
+  width: 35px;
+  height: 35px;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.mwform-checkbox-field-text::after {
+  border-width: 2px;
+  border-color: transparent transparent #000 #000;
+  border-style: solid;
+  width: 15px;
+  height: 7px;
+  margin-top: -0.3em;
+  top: 50%;
+  left: 8px;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+      -ms-transform: translateY(-50%) rotate(-45deg);
+          transform: translateY(-50%) rotate(-45deg);
+  opacity: 0;
+}
+
+input[type=checkbox]:checked + .mwform-checkbox-field-text::after {
+  /* css擬似要素 :checked が付加されているときは表示  */
+  opacity: 1;
+}
+
+.form_check label {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 50px 0;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .form_check label {
+    margin: 0 0 50px;
+  }
+}
+.form_check span {
+  padding: 0 0 35px 50px;
+  cursor: pointer;
+  cursor: hand;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .form_check span {
+    padding: 0 0 35px;
+  }
+}
+
+.mw_wp_form_complete {
+  margin: 100px 0;
+}
+.mw_wp_form_complete p {
+  font-size: 24px;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  line-height: 3;
+  letter-spacing: 6px;
+  text-align: center;
+}
+
+.btn_confirm {
+  text-align: center;
+  margin: 65px 0 100px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .btn_confirm {
+    margin: 60px 0 20px;
+  }
+}
+
+/*----------------------------------------------------------
+フォームチェックでフォーム全体のスタイルを打ち消し
+----------------------------------------------------------*/
+#inquiry_check .required_add::after {
+  display: none;
+}
+#inquiry_check .required_no::after {
+  display: none;
+}
+#inquiry_check .input_wrap p, #inquiry_check .textarea_wrap p {
+  background: #E8E8E8;
+  padding: 19px;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  #inquiry_check .input_wrap p, #inquiry_check .textarea_wrap p {
+    width: 75%;
+  }
+}
+#inquiry_check .check_wrap {
+  display: none;
+}
+
+/*----------------------------------------------------------
+フォームチェックのみのスタイル
+----------------------------------------------------------*/
+.inquiry_text {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 30px;
+}

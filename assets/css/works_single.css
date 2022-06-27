@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+/* 1300以下  */
+@media all and (max-width: 1300px) {
+  .works_wrap {
+    margin: 0 auto;
+  }
+}
+.works_text p {
+  margin: 0 0 20px;
+  line-height: 2;
+  letter-spacing: 2px;
+}
+/*# sourceMappingURL=works_single.css.map */

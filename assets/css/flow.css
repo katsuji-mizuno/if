@@ -1,0 +1,282 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+#flow #pageHead {
+  background-image: url(../images/flow/bg_flow_head.jpg);
+}
+
+/*----------------------------------------------------
+main
+----------------------------------------------------*/
+/*----------------------------------------------------
+flow_block
+----------------------------------------------------*/
+.flow_block {
+  max-width: 1060px;
+  margin: 0 auto 30px;
+  /* 751以上 */
+  /* 750以下  */
+}
+@media all and (min-width: 751px) {
+  .flow_block {
+    border-left: 20px solid;
+    margin: 0 auto 10px;
+    min-height: 250px;
+  }
+  .flow_block:nth-child(1) {
+    border-color: #F2F2F2;
+  }
+  .flow_block:nth-child(2) {
+    border-color: #DCE2E1;
+  }
+  .flow_block:nth-child(3) {
+    border-color: #C9D1D0;
+  }
+  .flow_block:nth-child(4) {
+    border-color: #B8C9C7;
+  }
+  .flow_block:nth-child(5) {
+    border-color: #95B5B2;
+  }
+  .flow_block:nth-child(6) {
+    border-color: #749B98;
+  }
+}
+@media all and (max-width: 750px) {
+  .flow_block .flow_block_tit_wrap {
+    position: relative;
+  }
+  .flow_block .flow_block_tit_wrap::after {
+    content: "";
+    margin: 0 calc(50% - 50vw);
+    width: 120%;
+    position: absolute;
+    z-index: -1;
+    left: -10px;
+    top: 37px;
+  }
+  .flow_block:nth-child(1) .flow_block_tit_wrap::after {
+    border-bottom: solid 20px #F2F2F2;
+  }
+  .flow_block:nth-child(2) .flow_block_tit_wrap::after {
+    border-bottom: solid 20px #F2F2F2;
+  }
+  .flow_block:nth-child(3) .flow_block_tit_wrap::after {
+    border-bottom: solid 44px #F2F2F2;
+  }
+  .flow_block:nth-child(4) .flow_block_tit_wrap::after {
+    border-bottom: solid 20px #F2F2F2;
+  }
+  .flow_block:nth-child(5) .flow_block_tit_wrap::after {
+    border-bottom: solid 20px #F2F2F2;
+  }
+  .flow_block:nth-child(6) .flow_block_tit_wrap::after {
+    border-bottom: solid 44px #F2F2F2;
+  }
+}
+
+.flow_block_text_wrap {
+  /* 751以上 */
+  /* 750以下  */
+}
+@media all and (min-width: 751px) {
+  .flow_block_text_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+@media all and (max-width: 750px) {
+  .flow_block_text_wrap {
+    padding: 0 0 20px;
+  }
+}
+
+.flow_block_inner {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .flow_block_inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .flow_block_inner.reverse {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse;
+            flex-flow: row-reverse;
+  }
+}
+
+.flow_block_text {
+  margin: 0 0 0 3vw;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .flow_block_text {
+    padding: 0 0 30px;
+  }
+}
+
+.flow_block_tit_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .flow_block_tit_wrap {
+    margin: 0px 0 20px;
+  }
+}
+
+.flow_block_tit {
+  margin: 28px 0 0 10px;
+  font-size: 17px;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  /* 751以上 */
+}
+.flow_block_tit br {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .flow_block_tit br {
+    display: none;
+  }
+}
+@media all and (min-width: 751px) {
+  .flow_block_tit {
+    margin: 0 0 0 60px;
+  }
+}
+
+.flow_block_txt {
+  /* 751以上 */
+  line-height: 2;
+}
+@media all and (min-width: 751px) {
+  .flow_block_txt {
+    margin: 30px 0 0 90px;
+    padding: 0 0 40px;
+  }
+}
+
+.flow_block_img {
+  -webkit-box-shadow: 2px 2px 5px #ccc;
+          box-shadow: 2px 2px 5px #ccc;
+  /* 751以上 */
+  /* 750以下  */
+}
+@media all and (min-width: 751px) {
+  .flow_block_img {
+    width: 372px;
+    height: 204px;
+  }
+}
+@media all and (max-width: 750px) {
+  .flow_block_img {
+    width: 95%;
+    margin: 0 0 0 10px;
+  }
+}
+
+.flow_block_num {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 24px;
+  position: relative;
+}
+.flow_block_num::after {
+  content: "";
+  border-top: 1px solid #000;
+  width: 60px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(-60deg);
+  position: absolute;
+  top: 30px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .flow_block_num::after {
+    top: 28px;
+    left: -4px;
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+    width: 65px;
+  }
+}
+
+.btn_flow {
+  margin: 60px auto;
+  text-align: right;
+}
+.btn_flow a {
+  background: #546C6C;
+  color: #fff;
+  font-size: 13px;
+  padding: 20px 100px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn_flow a:hover {
+  background: #505050;
+}
+
+/*===============================
+「予約」、「ショールーム」へのリンク
+================================*/
+.inqury_link {
+  text-align: left;
+}
+
+.inqury_link_text {
+  text-align: left;
+}
+
+.inqury_link_btn {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .inqury_link_btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 20px 0 60px;
+  }
+}
+
+.inqury_link_btn_reservation a, .inqury_link_btn_showroom a {
+  color: #fff;
+  padding: 15px 60px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.inqury_link_btn_reservation a:hover, .inqury_link_btn_showroom a:hover {
+  background: #505050;
+}
+
+.inqury_link_btn_reservation {
+  margin: 0 0 0 10px;
+  /* 750以下  */
+}
+.inqury_link_btn_reservation a {
+  background: #2B2B2B;
+}
+@media all and (max-width: 750px) {
+  .inqury_link_btn_reservation {
+    margin: 20px 10px 30px 0;
+  }
+}
+
+.inqury_link_btn_showroom a {
+  background: #546C6C;
+}
+/*# sourceMappingURL=flow.css.map */

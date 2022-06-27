@@ -1,0 +1,620 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+body {
+  font-size: 17px;
+}
+
+#reservation #pageHead, #reservation_check #pageHead {
+  background-image: url(../images/reservation/bg_reservation_head.jpg);
+}
+
+.reservation_wrap {
+  max-width: 1060px;
+  margin: 0 auto 100px;
+  font-size: 13px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .reservation_wrap {
+    margin: 0 auto 20px;
+    overflow-x: scroll;
+  }
+}
+
+.reservation_txt {
+  text-align: left;
+  margin: 0 0 20px;
+  font-size: 18px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .reservation_txt {
+    font-size: 15px;
+  }
+}
+
+.reservation_txt_r {
+  text-align: right;
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体";
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .reservation_txt_r {
+    font-size: 13px;
+  }
+}
+
+.reservation_txt2 {
+  text-align: left;
+  margin: 80px 0 20px;
+  font-size: 18px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .reservation_txt2 {
+    font-size: 15px;
+    margin: 50px 0 10px;
+  }
+}
+
+.reservation_txt2_detail {
+  margin: 0 0 40px;
+  display: none;
+}
+
+#reservation .reservation_check_date {
+  display: none;
+}
+
+#reservation_check .reservation_txt2_detail {
+  margin: 0;
+  display: block;
+  text-align: center;
+}
+#reservation_check .reservation_check_date {
+  font-size: 20px;
+  text-align: center;
+  margin: 40px 0 20px;
+  font-weight: bold;
+}
+
+/*=================
+  パンくず
+=================*/
+.brunch {
+  /* 1301以上  */
+}
+@media all and (min-width: 1301px) {
+  .brunch {
+    top: 190px;
+    left: -70px;
+  }
+}
+
+/*===============================
+ラジオボタンで予約表を切り替え
+================================*/
+.reservation_radio {
+  margin: 0px 0 50px;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .reservation_radio {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+#komaki #hamamatsu_calendar, #komaki #toyama_calendar {
+  display: none;
+}
+#komaki .hamamatsu_wrap, #komaki .toyama_wrap {
+  display: none;
+}
+
+#hamamatsu #komaki_calendar, #hamamatsu #toyama_calendar {
+  display: none;
+}
+#hamamatsu .komaki_wrap, #hamamatsu .toyama_wrap {
+  display: none;
+}
+
+#toyama #komaki_calendar, #toyama #hamamatsu_calendar {
+  display: none;
+}
+#toyama .komaki_wrap, #toyama .hamamatsu_wrap {
+  display: none;
+}
+
+#foodList {
+  color: #f26778;
+  font-size: 18px;
+}
+
+#placeList {
+  color: #007af4;
+  font-size: 18px;
+}
+
+.form-check-label {
+  cursor: pointer;
+}
+
+/*===============================
+ラジオボタンのデザイン変更
+================================*/
+.radio {
+  text-align: left;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .radio {
+    width: 15%;
+  }
+}
+.radio input[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+.radio input[type=radio] + .radio-label:before {
+  content: "";
+  background: #fff;
+  border-radius: 100%;
+  border: 1px solid #bfbfbf;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  left: -10px;
+  top: 2px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.radio input[type=radio]:checked + .radio-label:before {
+  background-color: #2B2B2B;
+  -webkit-box-shadow: inset 0 0 0 2px #fff;
+          box-shadow: inset 0 0 0 2px #fff;
+}
+.radio input[type=radio]:focus + .radio-label:before {
+  outline: none;
+  border-color: #ADADAD;
+}
+.radio input[type=radio] + .radio-label:empty:before {
+  margin-right: 0;
+}
+
+.radio-label {
+  margin: 0 0 0 10px;
+}
+
+/*===============================
+アンカーの位置調整
+================================*/
+#komaki, #hamamatsu, #toyama {
+  padding: 1360px 0 0;
+  margin: -1360px 0 0;
+  font-size: 13px;
+}
+
+/*===============================
+フォームのデザイン調整
+================================*/
+.input_wrap, .textarea_wrap {
+  text-align: left;
+  margin: 0 0 30px;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .input_wrap, .textarea_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .input_wrap p, .textarea_wrap p {
+    width: 75%;
+  }
+}
+
+.input_wrap {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.textarea_wrap {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+input, textarea {
+  border: none;
+  background: #EBEBEB;
+  padding: 13px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.content-form legend {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 0 5px;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+  -webkit-padding-end: 0px;
+          padding-inline-end: 0px;
+}
+
+/*===============================
+「必須」、「任意」のアイコン追加
+================================*/
+.required_add, .required_no {
+  /* 751以上 */
+  /* 750以下  */
+}
+@media all and (min-width: 751px) {
+  .required_add, .required_no {
+    width: 20%;
+    min-width: 210px;
+  }
+}
+.required_add::after, .required_no::after {
+  font-size: 12px;
+  padding: 1px 10px;
+  margin: 0 0 0 15px;
+}
+@media all and (max-width: 750px) {
+  .required_add, .required_no {
+    margin: 0 0 10px 0;
+  }
+}
+
+.required_add::after {
+  content: "必須";
+  background: #C9D1D0;
+}
+
+.required_no::after {
+  content: "任意";
+  background: #E8E8E8;
+}
+
+.reservation_txt.required_add {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .reservation_txt.required_add {
+    width: 100%;
+  }
+}
+
+/*===============================
+「内容を確認する」ボタンのデザイン調整
+================================*/
+.btn_confirm input {
+  border: none;
+  color: #fff;
+  background: #2F2F2E;
+  width: 200px;
+  cursor: pointer;
+  cursor: hand;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn_confirm input:hover {
+  background: #505050;
+}
+
+.link_privacy {
+  margin: 0px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .link_privacy {
+    margin: 0;
+  }
+}
+.link_privacy a {
+  border-bottom: 1px solid;
+}
+
+.check_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .check_wrap {
+    margin: 40px 0;
+  }
+}
+
+.form_check {
+  width: 45px;
+}
+
+.btn_confirm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/*----------------------------------------------------------
+フォーム チェックボックスのデザインを変える
+----------------------------------------------------------*/
+input[type=checkbox] {
+  /* デフォルトcheckボックス非表示*/
+  display: none;
+}
+
+.mwform-checkbox-field-text {
+  display: inline-block;
+  position: relative;
+  padding: 0 36px 0 36px;
+}
+
+.mwform-checkbox-field-text::before,
+.mwform-checkbox-field-text::after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+.mwform-checkbox-field-text::before {
+  background: #F2F2F2;
+  width: 35px;
+  height: 35px;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.mwform-checkbox-field-text::after {
+  border-width: 2px;
+  border-color: transparent transparent #000 #000;
+  border-style: solid;
+  width: 15px;
+  height: 7px;
+  margin-top: -0.3em;
+  top: 50%;
+  left: 8px;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+      -ms-transform: translateY(-50%) rotate(-45deg);
+          transform: translateY(-50%) rotate(-45deg);
+  opacity: 0;
+}
+
+input[type=checkbox]:checked + .mwform-checkbox-field-text::after {
+  /* css擬似要素 :checked が付加されているときは表示*/
+  opacity: 1;
+}
+
+.form_check label {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 50px 0;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .form_check label {
+    margin: 0 0 50px;
+  }
+}
+.form_check span {
+  padding: 0 0 35px;
+  cursor: pointer;
+  cursor: hand;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .form_check span {
+    padding: 0 0 35px;
+  }
+}
+
+span.error {
+  position: absolute;
+}
+
+.radio_wrap span.error {
+  position: unset;
+}
+
+span.mwform-radio-field-text {
+  font-size: 17px;
+}
+
+.mw_wp_form_complete {
+  margin: 100px 0;
+}
+.mw_wp_form_complete p {
+  font-size: 24px;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  line-height: 3;
+  letter-spacing: 6px;
+  text-align: center;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .mw_wp_form_complete p {
+    font-size: 21px;
+    letter-spacing: 3px;
+  }
+}
+
+.btn_confirm {
+  text-align: center;
+  margin: 20px 0 100px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .btn_confirm {
+    margin: 20px 0 20px;
+  }
+}
+
+/*----------------------------------------------------------
+フォームチェックでフォーム全体のスタイルを打ち消し
+----------------------------------------------------------*/
+#reservation_check .required_add::after {
+  display: none;
+}
+#reservation_check .required_no::after {
+  display: none;
+}
+#reservation_check .input_wrap p, #reservation_check .textarea_wrap p {
+  background: #E8E8E8;
+  padding: 19px;
+  min-height: 19px;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  #reservation_check .input_wrap p, #reservation_check .textarea_wrap p {
+    width: 75%;
+  }
+}
+#reservation_check .check_wrap {
+  display: none;
+}
+#reservation_check .radio-btns {
+  text-align: center;
+  margin: 60px 0;
+  font-size: 18px;
+  border: 1px solid #2F2F2E;
+  padding: 10px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  #reservation_check .radio-btns {
+    font-size: 15px;
+    margin: 50px 0 10px;
+  }
+}
+#reservation_check .radio-btns::before {
+  content: "店舗名：";
+}
+#reservation_check .reservation_txt2 {
+  display: none;
+}
+#reservation_check .reservation_txt {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 30px;
+}
+
+/*----------------------------------------------------------
+ラジオボタンのデザイン修正
+----------------------------------------------------------*/
+/* ラジオボタンを隠す */
+input.radio-btns__item {
+  display: none;
+}
+
+.radio-btns {
+  margin: 0 0 80px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .radio-btns {
+    margin: 0 0 30px;
+  }
+}
+
+.radio-btns label {
+  display: inline-block;
+  cursor: pointer;
+  cursor: hand;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .radio-btns label {
+    display: block;
+  }
+}
+
+/* spanの左側にボタンを配置するスペースを作る */
+.radio-btns .radio-btns__item + span {
+  padding-left: 35px;
+  display: inline-block;
+  position: relative;
+  padding-right: 30px;
+}
+
+/* 各パーツを作成 */
+.radio-btns .radio-btns__item + span::after,
+.radio-btns .radio-btns__item + span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 1px solid #AAAAAA;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* after上書き */
+.radio-btns .radio-btns__item + span::after {
+  opacity: 0;
+  width: 14px;
+  height: 14px;
+  top: 4px;
+  left: 4px;
+  border: none;
+  background: #2B2B2B;
+}
+
+/*
+checked状態
+文字のcolorとボタンのopacityを変更
+ */
+.radio-btns .radio-btns__item:checked + span::after {
+  opacity: 1;
+}
+
+span.mwform-radio-field.horizontal-item {
+  margin: 0 60px 0 0;
+}
+
+input[type=submit] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.thanks_text {
+  text-align: center;
+  font-size: 16px;
+}
+.thanks_text p {
+  margin: 0 0 10px;
+}
+/*# sourceMappingURL=reservation.css.map */

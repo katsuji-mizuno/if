@@ -1,0 +1,14 @@
+@charset 'utf-8';
+@import 'mixin';
+
+@include mediaMIDmax{
+	.works_wrap {
+		margin: 0 auto;
+	}
+}
+
+.works_text p {
+    margin: 0 0 20px;
+    line-height: 2;
+    letter-spacing: 2px;
+}

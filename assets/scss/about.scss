@@ -1,0 +1,86 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+#about{
+	#pageHead  {
+		background-image: url(../images/about/bg_about_head.jpg);
+	}
+}
+
+.about_wrap {
+    max-width: 1060px;
+    margin: 0 auto;
+    text-align: left;
+	line-height: 2;
+	li{
+		border-top: solid 1px #E4E4E4;
+		padding: 20px 0;
+		&:last-child{
+			border-bottom: solid 1px #E4E4E4;
+		}
+		@include mediaPC{
+			display: flex;
+		}
+	}
+}
+
+.item{
+	font-weight: bold;
+	@include mediaPC{
+
+	width: 30%;
+	}
+}
+
+.detail{
+	@include mediaPC{
+
+	width: 70%;
+	}
+}
+
+.detail_addres {
+	@include mediaPC{
+	width: 70%;
+	display: flex;
+	justify-content: space-between;
+}
+}
+
+.detail_addres_text{}
+
+.detail_addres_map{
+	position: relative;
+    margin: 0 30px 0 0;
+	&::after{
+		content: "";
+		position: absolute;
+		right: 220px;
+		width: 6px;
+		height: 6px;
+		border-top: 1px solid #3B3B3B;
+		border-right: 1px solid #3B3B3B;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+		top: 9px;
+		@include trans;
+		@include mediaPC{
+			right: -29px;
+		}
+	}
+	@include mediaPC{
+	&:hover{
+		&::after{
+			right: -19px;
+		}
+	}
+}
+
+}
+
+@include mediaSP{
+.btn_home {
+    margin: 80px auto 60px;
+}
+}
